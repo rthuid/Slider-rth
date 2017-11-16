@@ -6,17 +6,6 @@
 /********************************************************************************************************************************
 ********************************************************************************************************************************/
 
-@import "helper/_variables.scss";
-@import "base/_font.scss";
-@import "base/_icons.scss";
-@import "helper/_mixins.scss";
-@import "helper/_extend.scss";
-
-/*****************************
-*****************************/
-
-@import "component/_global.scss";
-@import "component/_form.scss";
-@import "component/_button.scss";
-@import "component/_animation.scss";
-@import "component/_table.scss";
+@import "helper/_helper-master.scss";
+@import "base/base-master.scss";
+@import "component/component-master.scss";
