@@ -113,33 +113,63 @@ body {
 .slider-rth {
   position: relative;
   overflow: hidden;
-  margin: 20px auto 0 auto;
+  margin: 0px auto 0 auto;
   border-radius: 4px;
+  height: 100vh;
 }
-/* line 6, ../sass/component/_slider-rth.scss */
-.slider-rth ul {
+/* line 7, ../sass/component/_slider-rth.scss */
+.slider-rth > ul {
   position: relative;
   margin: 0;
   padding: 0;
-  height: 200px;
   list-style: none;
+  height: 100%;
 }
-/* line 12, ../sass/component/_slider-rth.scss */
-.slider-rth ul li {
-  position: relative;
-  display: block;
-  float: left;
+/* line 13, ../sass/component/_slider-rth.scss */
+.slider-rth > ul > li {
+  position: absolute;
   margin: 0;
   padding: 0;
-  width: 500px;
-  height: 300px;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
   background: #ccc;
-  text-align: center;
-  line-height: 300px;
+  -webkit-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -ms-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -o-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-/* line 25, ../sass/component/_slider-rth.scss */
-.slider-rth a.control_prev,
-.slider-rth a.control_next {
+/* line 28, ../sass/component/_slider-rth.scss */
+.slider-rth > ul > li.active {
+  left: 0;
+  display: block;
+}
+/* line 32, ../sass/component/_slider-rth.scss */
+.slider-rth > ul > li.next {
+  left: 100%;
+  display: block;
+}
+/* line 36, ../sass/component/_slider-rth.scss */
+.slider-rth > ul > li.nnext {
+  left: 200%;
+  display: block;
+}
+/* line 40, ../sass/component/_slider-rth.scss */
+.slider-rth > ul > li.prev {
+  left: -100%;
+  display: block;
+}
+/* line 44, ../sass/component/_slider-rth.scss */
+.slider-rth > ul > li.pprev {
+  left: -200%;
+  display: block;
+}
+/* line 50, ../sass/component/_slider-rth.scss */
+.slider-rth .control_prev,
+.slider-rth .control_next {
   position: absolute;
   top: 40%;
   z-index: 999;
@@ -155,26 +185,26 @@ body {
   opacity: 0.8;
   cursor: pointer;
 }
-/* line 43, ../sass/component/_slider-rth.scss */
-.slider-rth a.control_prev:hover,
-.slider-rth a.control_next:hover {
+/* line 68, ../sass/component/_slider-rth.scss */
+.slider-rth .control_prev:hover,
+.slider-rth .control_next:hover {
   opacity: 1;
   -webkit-transition: all 0.2s ease;
 }
-/* line 49, ../sass/component/_slider-rth.scss */
-.slider-rth a.control_prev {
+/* line 74, ../sass/component/_slider-rth.scss */
+.slider-rth .control_prev {
   border-radius: 0 2px 2px 0;
 }
-/* line 53, ../sass/component/_slider-rth.scss */
-.slider-rth a.control_next {
+/* line 78, ../sass/component/_slider-rth.scss */
+.slider-rth .control_next {
   right: 0;
   border-radius: 2px 0 0 2px;
 }
 
-/* line 59, ../sass/component/_slider-rth.scss */
+/* line 84, ../sass/component/_slider-rth.scss */
 .slider_option {
   position: relative;
-  margin: 10px auto;
+  margin: 0px auto;
   width: 160px;
   font-size: 18px;
 }
