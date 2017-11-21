@@ -65,40 +65,16 @@
 1. Color
 ***************************************************************************************************************
 **************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-	1. Define the breakpoints at which your layout will change, adapting to different screen sizes.
-	2. Extra small screen-phone, Small screen-tablet, Medium screen - desktop, Large screen - wide desktop
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
-/***************************************************************************************************************
-***************************************************************************************************************/
+/*$clr-white:					#fff;
+$clr-black:					#000;
+
+$grey-lighter:          #fbfbfb !default;
+$grey-light:            #949494 !default;
+$grey-dark:             #666 !default;
+
+$brand-primary:         #4576a2 !default;
+$brand-secondary:       #3791e2 !default;
+$brand-red:					#ed1c24 !default;*/
 /***************************************************************************************************************
 ***************************************************************************************************************/
 /* line 1, ../sass/base/_global.scss */
@@ -109,7 +85,7 @@ body {
   font-family: 'Open Sans';
 }
 
-/* line 1, ../sass/component/_slider-rth.scss */
+/* line 1, ../sass/component/slider/_slider-rth.scss */
 .slider-rth {
   position: relative;
   overflow: hidden;
@@ -117,7 +93,7 @@ body {
   border-radius: 4px;
   height: 100vh;
 }
-/* line 7, ../sass/component/_slider-rth.scss */
+/* line 7, ../sass/component/slider/_slider-rth.scss */
 .slider-rth > ul {
   position: relative;
   margin: 0;
@@ -125,7 +101,7 @@ body {
   list-style: none;
   height: 100%;
 }
-/* line 13, ../sass/component/_slider-rth.scss */
+/* line 13, ../sass/component/slider/_slider-rth.scss */
 .slider-rth > ul > li {
   position: absolute;
   margin: 0;
@@ -135,39 +111,38 @@ body {
   width: 100%;
   height: 100%;
   min-height: 600px;
-  background: #ccc;
-  -webkit-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -moz-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -ms-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -o-transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
+  -moz-transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
+  -ms-transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
+  -o-transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
+  transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
 }
-/* line 28, ../sass/component/_slider-rth.scss */
+/* line 29, ../sass/component/slider/_slider-rth.scss */
 .slider-rth > ul > li.active {
   left: 0;
   display: block;
 }
-/* line 32, ../sass/component/_slider-rth.scss */
+/* line 33, ../sass/component/slider/_slider-rth.scss */
 .slider-rth > ul > li.next {
   left: 100%;
   display: block;
 }
-/* line 36, ../sass/component/_slider-rth.scss */
+/* line 37, ../sass/component/slider/_slider-rth.scss */
 .slider-rth > ul > li.nnext {
   left: 200%;
   display: block;
 }
-/* line 40, ../sass/component/_slider-rth.scss */
+/* line 41, ../sass/component/slider/_slider-rth.scss */
 .slider-rth > ul > li.prev {
   left: -100%;
   display: block;
 }
-/* line 44, ../sass/component/_slider-rth.scss */
+/* line 45, ../sass/component/slider/_slider-rth.scss */
 .slider-rth > ul > li.pprev {
   left: -200%;
   display: block;
 }
-/* line 50, ../sass/component/_slider-rth.scss */
+/* line 51, ../sass/component/slider/_slider-rth.scss */
 .slider-rth .control_prev,
 .slider-rth .control_next {
   position: absolute;
@@ -185,26 +160,106 @@ body {
   opacity: 0.8;
   cursor: pointer;
 }
-/* line 68, ../sass/component/_slider-rth.scss */
+/* line 69, ../sass/component/slider/_slider-rth.scss */
 .slider-rth .control_prev:hover,
 .slider-rth .control_next:hover {
   opacity: 1;
   -webkit-transition: all 0.2s ease;
 }
-/* line 74, ../sass/component/_slider-rth.scss */
+/* line 75, ../sass/component/slider/_slider-rth.scss */
 .slider-rth .control_prev {
   border-radius: 0 2px 2px 0;
 }
-/* line 78, ../sass/component/_slider-rth.scss */
+/* line 79, ../sass/component/slider/_slider-rth.scss */
 .slider-rth .control_next {
   right: 0;
   border-radius: 2px 0 0 2px;
 }
 
-/* line 84, ../sass/component/_slider-rth.scss */
+/* line 85, ../sass/component/slider/_slider-rth.scss */
 .slider_option {
   position: relative;
   margin: 0px auto;
   width: 160px;
   font-size: 18px;
+}
+
+/* line 4, ../sass/component/slider/_slides.scss */
+.slider-rth > ul > li .slide-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  -webkit-transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
+  -moz-transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
+  -ms-transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
+  -o-transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
+  transition: all 0.7s cubic-bezier(0.9, -0.25, 0.29, 1.25);
+}
+/* line 10, ../sass/component/slider/_slides.scss */
+.slider-rth > ul > li .slide-bg.blue {
+  background: #145daa;
+}
+/* line 13, ../sass/component/slider/_slides.scss */
+.slider-rth > ul > li .slide-bg.green {
+  background: #e73034;
+}
+/* line 16, ../sass/component/slider/_slides.scss */
+.slider-rth > ul > li .slide-bg.red {
+  background: #0d9f4a;
+}
+/* line 21, ../sass/component/slider/_slides.scss */
+.slider-rth > ul > li.active .slide-bg {
+  left: 15%;
+  top: -20%;
+  -moz-transform: rotate(11deg);
+  -o-transform: rotate(11deg);
+  -ms-transform: rotate(11deg);
+  -webkit-transform: rotate(11deg);
+  transform: rotate(11deg);
+  z-index: 1;
+}
+/* line 29, ../sass/component/slider/_slides.scss */
+.slider-rth > ul > li.next .slide-bg {
+  left: -7%;
+  top: 64%;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 2;
+}
+/* line 37, ../sass/component/slider/_slides.scss */
+.slider-rth > ul > li.nnext .slide-bg {
+  left: -7%;
+  top: 64%;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 2;
+}
+/* line 45, ../sass/component/slider/_slides.scss */
+.slider-rth > ul > li.prev .slide-bg {
+  left: 4%;
+  top: 0%;
+  -moz-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  -webkit-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  z-index: 3;
+}
+/* line 53, ../sass/component/slider/_slides.scss */
+.slider-rth > ul > li.pprev .slide-bg {
+  left: 4%;
+  top: 0%;
+  -moz-transform: rotate(-40deg);
+  -o-transform: rotate(-40deg);
+  -ms-transform: rotate(-40deg);
+  -webkit-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  z-index: 3;
 }

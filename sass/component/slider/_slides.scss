@@ -1,0 +1,62 @@
+.slider-rth {
+    > ul{
+        >li{
+            .slide-bg{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 100px;
+                @include transition();
+                &.blue{
+                    background: $brand-blue;
+                }
+                &.green{
+                    background: $brand-green;
+                }
+                &.red{
+                    background: $brand-red;
+                }
+            }
+            &.active{
+                .slide-bg{
+                    left: 15%;
+                    top: -20%;
+                    @include rotate(11);
+                    z-index: 1;
+                }
+            }
+            &.next{
+                .slide-bg{
+                    left: -7%;
+                    top: 64%;
+                    @include rotate(45);
+                    z-index: 2;
+                }
+            }
+            &.nnext{
+                .slide-bg{
+                    left: -7%;
+                    top: 64%;
+                    @include rotate(45);
+                    z-index: 2;
+                }
+            }
+            &.prev{
+                .slide-bg{
+                    left: 4%;
+                    top: 0%;
+                    @include rotate(-40);
+                    z-index: 3;
+                }
+            }
+            &.pprev{
+                .slide-bg{
+                    left: 4%;
+                    top: 0%;
+                    @include rotate(-40);
+                    z-index: 3;
+                }
+            }
+        }
+    }
+}

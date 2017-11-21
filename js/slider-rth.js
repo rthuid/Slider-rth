@@ -13,20 +13,20 @@ $(document).ready(function () {
         var slides = $('>ul>li', sliderWrp);
         var slideUl = $('>ul', sliderWrp);
         var slidesLength = $(slides).length;
-        
+
         //checking slide length
-        function slideLengthChecking(){
+        function slideLengthChecking() {
             if (slidesLength < 5) {
                 cloning();
             }
         }
         //clone function
         function cloning() {
-                var cloneList = $(slides).clone();
-                $(slideUl).append(cloneList);
-                slides = $('>ul>li', sliderWrp);
-                slidesLength = $(slides).length;
-                slideLengthChecking()
+            var cloneList = $(slides).clone();
+            $(slideUl).append(cloneList);
+            slides = $('>ul>li', sliderWrp);
+            slidesLength = $(slides).length;
+            slideLengthChecking()
         }
         //adding li classes
         function classAdding() {
@@ -103,10 +103,9 @@ $(document).ready(function () {
             }
         };
 
-        $(this).find('.control_prev').click(function () {
+        $(document).on('click', '.control_next,.next .slide-bg', this, function () {
             if (!$(this).hasClass('clicked')) {
                 moveLeft();
-                sliderWrp = $(this).parent('div');
                 //delay
                 $(this).addClass('clicked').delay(interval).queue(function (next) {
                     $(this).removeClass("clicked");
@@ -115,10 +114,9 @@ $(document).ready(function () {
             }
         });
 
-        $(this).find('.control_next').click(function () {
+        $(document).on('click', '.control_prev,.prev .slide-bg', this, function () {
             if (!$(this).hasClass('clicked')) {
                 moveRight();
-                sliderWrp = $(this).parent('div')
                 //delay
                 $(this).addClass('clicked').delay(interval).queue(function (next) {
                     $(this).removeClass("clicked");
@@ -127,14 +125,6 @@ $(document).ready(function () {
             }
         });
     });
-
-
-    /*$('#slider').css({ width: slideWidth, height: slideHeight });
-	
-	$('#slider ul').css({ width: slideUlWidth, marginLeft: - slideWidth });
-	
-    $('#slider ul li:last-child').prependTo('#slider ul');*/
-
 
 
 });
