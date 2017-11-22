@@ -1,13 +1,8 @@
 $(document).ready(function () {
-
-    $('#checkbox').change(function () {
-        setInterval(function () {
-            moveRight();
-        }, 1000);
-    });
-
+    
     $('.slider-rth').each(function () {
-        var interval = 600
+        var slideClickinterval = 900
+        var interval = 5000
 
         var sliderWrp = $(this);
         var slides = $('>ul>li', sliderWrp);
@@ -33,13 +28,21 @@ $(document).ready(function () {
             $(slideUl).children('li').first().addClass('active').next().addClass('next').next().addClass('nnext');
             $(slideUl).children('li').last().addClass('prev').prev().addClass('pprev');
         }
+        //auto slide function
+        function autoInterval(){
+                setInterval(function () {
+                moveRight();
+            }, interval);
+        }
         //
         slideLengthChecking()
         classAdding();
+//        autoInterval();
 
 
 
         function moveLeft() {
+            console.log(interval);
             if (!$(sliderWrp).find('li.pprev').next('li').length) {
                 $(sliderWrp).find('li.pprev').removeClass('pprev').siblings('li').first().addClass('pprev')
             } else {
@@ -107,7 +110,7 @@ $(document).ready(function () {
             if (!$(this).hasClass('clicked')) {
                 moveLeft();
                 //delay
-                $(this).addClass('clicked').delay(interval).queue(function (next) {
+                $(sliderWrp).find('.next').children('.slide-bg').addClass('clicked').delay(slideClickinterval).queue(function (next) {
                     $(this).removeClass("clicked");
                     next();
                 });
@@ -118,7 +121,7 @@ $(document).ready(function () {
             if (!$(this).hasClass('clicked')) {
                 moveRight();
                 //delay
-                $(this).addClass('clicked').delay(interval).queue(function (next) {
+                $(sliderWrp).find('.prev').children('.slide-bg').addClass('clicked').delay(slideClickinterval).queue(function (next) {
                     $(this).removeClass("clicked");
                     next();
                 });

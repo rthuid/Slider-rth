@@ -1,5 +1,5 @@
 // generic transform
-@mixin transition($prop:all,$time:.7s, $fun:cubic-bezier(0.90, -0.25, 0.290, 1.25)) {
+@mixin transition($prop:all,$time:.9s, $fun:cubic-bezier(0.90, -0.35, 0.290, 1.35)) {
     -webkit-transition: $prop $time $fun;
     -moz-transition: $prop $time $fun;
     -ms-transition: $prop $time $fun;

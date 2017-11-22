@@ -3,7 +3,7 @@
         >li{
             .slide-bg{
                 position: absolute;
-                width: 100%;
+                width: 110%;
                 height: 100%;
                 border-radius: 100px;
                 @include transition();
@@ -27,7 +27,7 @@
             }
             &.next{
                 .slide-bg{
-                    left: -7%;
+                    left: -5%;
                     top: 64%;
                     @include rotate(45);
                     z-index: 2;
@@ -35,7 +35,7 @@
             }
             &.nnext{
                 .slide-bg{
-                    left: -7%;
+                    left: -5%;
                     top: 64%;
                     @include rotate(45);
                     z-index: 2;
@@ -43,16 +43,16 @@
             }
             &.prev{
                 .slide-bg{
-                    left: 4%;
-                    top: 0%;
+                    left: -5%;
+                    top: 5%;
                     @include rotate(-40);
                     z-index: 3;
                 }
             }
             &.pprev{
                 .slide-bg{
-                    left: 4%;
-                    top: 0%;
+                    left: -5%;
+                    top: 5%;
                     @include rotate(-40);
                     z-index: 3;
                 }
