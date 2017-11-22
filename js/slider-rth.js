@@ -2,7 +2,7 @@ $(document).ready(function () {
     
     $('.slider-rth').each(function () {
         var slideClickinterval = 900
-        var interval = 5000
+        var interval = 6000
 
         var sliderWrp = $(this);
         var slides = $('>ul>li', sliderWrp);
@@ -37,7 +37,7 @@ $(document).ready(function () {
         //
         slideLengthChecking()
         classAdding();
-//        autoInterval();
+        autoInterval();
 
 
 
